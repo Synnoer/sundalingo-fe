@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Maskot from "../img/maskot.png";
-import Agiz from "../img/agiz.png";
+import Maskot from "~/img/maskot.png";
+import Agiz from "~/img/agiz.png";
 
 export default function Home() {
   return (
