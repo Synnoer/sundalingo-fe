@@ -1,9 +1,9 @@
 import Image from "next/image";
 import Maskot from "~/img/maskot.png";
 import Agiz from "~/img/agiz.png";
-import MainHeader from "~/component/mainheader";
+import MainHeader from "~/components/mainheader";
 import { useRouter } from "next/router";
-import '~/globals.css'; 
+import '~/styles/globals.css'; 
 
 
 export default function Home() {

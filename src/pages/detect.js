@@ -1,6 +1,6 @@
-import MainHeader from '~/component/mainheader';
-import MainFooter from '~/component/footer'
-import '~/globals.css';
+import MainHeader from '~/components/mainheader';
+import MainFooter from '~/components/footer'
+import '~/styles/globals.css';
 import React, { useState } from 'react';
 import handleUpload from '~/handleUpload'; // Import the reusable upload function
 
