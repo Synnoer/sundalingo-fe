@@ -1,32 +1,21 @@
 import Image from "next/image";
 import Maskot from "~/img/maskot.png";
 import Agiz from "~/img/agiz.png";
+import MainHeader from "~/component/mainheader";
+import { useRouter } from "next/router";
+import '~/globals.css'; 
+
 
 export default function Home() {
+  const router = useRouter();
+  
+  const detectPage = () => {
+    router.push ('/detect');
+  }
+  
   return (
-    <body className="bg-white text-gray-800">
-      <header className="bg-white shadow-md">
-        <div className="container mx-auto px-4 py-4 flex items-center justify-between">
-          <div className="text-4xl font-bold text-indigo-600">
-            Sunda<span className="text-black">Lingo</span>
-          </div>
-          <nav className="flex-1 flex justify-center space-x-6 ml-[-15%]">
-            <a className="text-black hover:text-indigo- font-bold" href="#">
-              Home
-            </a>
-            <a className="text-gray-600 hover:text-indigo- font-bold" href="#">
-              Service
-            </a>
-            <a className="text-gray-600 hover:text-indigo- font-bold" href="#">
-              Tutorial
-            </a>
-            <a className="text-gray-600 hover:text-indigo- font-bold" href="#">
-              About Us
-            </a>
-          </nav>
-        </div>
-      </header>
-
+    <div className="bg-white text-gray-800">
+      <MainHeader />
       <main>
         <section className="bg-white py-12">
           <div className="container mx-auto px-4 flex flex-col lg:flex-row items-center">
@@ -88,7 +77,7 @@ export default function Home() {
               tulisannya.
             </p>
             <div>
-              <button className="bg-blue-600 text-white px-6 py-3 rounded-full font-bold mb-4">
+              <button onClick={detectPage} className="bg-blue-600 text-white px-6 py-3 rounded-full font-bold mb-4">
                 Terjemahkan
               </button>
             </div>
@@ -284,6 +273,6 @@ export default function Home() {
           </div>
         </div>
       </footer>
-    </body>
+    </div>
   );
 }
