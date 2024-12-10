@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import handleUpload from '../handleUpload'; // Import the reusable upload function
+import handleUpload from '~/handleUpload'; // Import the reusable upload function
 
 export default function UploadImage() {
   const [predictions, setPredictions] = useState([]);
+  const [inferenceImageUrl, setInferenceImageUrl] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -13,8 +14,9 @@ export default function UploadImage() {
     setLoading(true);
     setError(null);
     try {
-      const predictions = await handleUpload(file); // Use the reusable upload function
-      setPredictions(predictions); // Store predictions in state
+      const { predictions, inference_img_url } = await handleUpload(file); // Destructure response
+      setPredictions(predictions);
+      setInferenceImageUrl(inference_img_url);
     } catch (err) {
       setError('Failed to upload image.');
     } finally {
@@ -28,12 +30,21 @@ export default function UploadImage() {
       <input type="file" onChange={handleImageUpload} />
       {loading && <p>Loading...</p>}
       {error && <p style={{ color: 'red' }}>{error}</p>}
+      {inferenceImageUrl && (
+        <div>
+          <h2>Processed Image</h2>
+          <img src={inferenceImageUrl} alt="Processed Output" style={{ maxWidth: '100%' }} />
+        </div>
+      )}
       {predictions.length > 0 && (
         <div>
           <h2>Predictions</h2>
           <ul>
             {predictions.map((prediction, index) => (
-              <li key={index}>{prediction}</li>
+              <li key={index}>
+                <strong>Label:</strong> {prediction.label || 'Unknown'} <br />
+                <strong>Confidence:</strong> {(prediction.confidence)}%
+              </li>
             ))}
           </ul>
         </div>
