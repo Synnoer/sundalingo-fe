@@ -2,6 +2,7 @@ import Image from "next/image";
 import Maskot from "~/img/maskot.png";
 import Agiz from "~/img/agiz.png";
 import MainHeader from "~/components/mainheader";
+import MainFooter from "~/components/footer";
 import { useRouter } from "next/router";
 import '~/styles/globals.css'; 
 
@@ -36,9 +37,9 @@ export default function Home() {
                 Unggah Aksara Sunda yang ada di sekitarmu. Dengan SundaLingo,
                 kamu bisa mengetahui artinya
               </p>
-              <button className="bg-yellow-400 text-white px-6 py-3 rounded-full font-bold">
+              <a href="/detect" className="bg-yellow-400 text-black px-6 py-3 rounded-xl font-bold">
                 AYO MULAI
-              </button>
+              </a>
             </div>
             <div className="lg:w-1/2 mt-8 lg:mt-0 flex justify-center">
               <Image
@@ -67,7 +68,7 @@ export default function Home() {
             </div>
           </div>
         </section>
-        <section className="bg-gray-100 py-12">
+        {/* <section className="bg-gray-100 py-12">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-bold text-gray-800 mb-4">
               Unggah Fotomu Di Sini
@@ -88,8 +89,8 @@ export default function Home() {
               </div>
             </div>
           </div>
-        </section>
-        <section className="bg-yellow-500 py-12">
+        </section> */}
+        <section className="bg-yellow-500 pt-12">
           <div className="container mx-auto px-4">
             <h2 className="text-3xl font-bold text-gray-800 mb-4 text-center">
               Cara Penggunaan
@@ -99,16 +100,16 @@ export default function Home() {
               Ikuti langkah-langkah penggunaan aplikasi Sundalingo untuk
               mempermudah proses penerjemahan Aksara Sunda ke dalam bentuk Latin
             </p>
-            <div className="flex lg:flex-row items-center">
+            <div className="flex lg:flex-row">
               <div className="lg:w-1/2">
                 <Image
                   alt="People in a classNameroom"
-                  className=" rounded-lg shadow-md"
+                  className=" rounded-lg"
                   src={Agiz}
                   width="50%"
                 />
               </div>
-              <div className="lg:w-1/2 mt-8 lg:mt-0 lg:pl-12">
+              <div className="lg:w-1/2 mt-8 lg:pl-12">
                 <h1 className="text-6xl font-bold text-gray-800 mb-4 ml-4">
                   Panduan Penggunaan
                 </h1>
@@ -116,7 +117,7 @@ export default function Home() {
                   Mari ikuti langkah - langkah berikut untuk menambah ilmu dan
                   wawasan yang lebih banyak kawan
                 </p>
-                <div className=" p-4 rounded-md shadow-md mr-4 mt-4 mb-4">
+                <div className=" p-4 rounded-md mr-4 mt-4 mb-4">
                   <ul className="space-y-4">
                     <li className="flex items-start bg-white rounded-lg p-2">
                       <span className="bg-yellow-400 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-4">
@@ -194,85 +195,7 @@ export default function Home() {
           </div>
         </section>
       </main>
-      <footer className="bg-indigo-900 text-white py-12">
-        <div className="container mx-auto px-4 flex flex-col lg:flex-row justify-between">
-          <div className="lg:w-1/3 mb-8 lg:mb-0">
-            <div className="text-2xl font-bold mb-4">SundaLingo</div>
-            <div className="flex space-x-4 mt-4">
-              <a className="text-gray-400 hover:text-white" href="#">
-                <i className="fab fa-facebook-f"></i>
-              </a>
-              <a className="text-gray-400 hover:text-white" href="#">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a className="text-gray-400 hover:text-white" href="#">
-                <i className="fab fa-instagram"></i>
-              </a>
-              <a className="text-gray-400 hover:text-white" href="#">
-                <i className="fab fa-youtube"></i>
-              </a>
-            </div>
-          </div>
-          <div className="lg:w-1/3 mb-8 lg:mb-0">
-            <h3 className="text-lg font-bold mb-4">About</h3>
-            <ul className="space-y-2">
-              <li>
-                <a className="text-gray-400 hover:text-white" href="#">
-                  Menu
-                </a>
-              </li>
-              <li>
-                <a className="text-gray-400 hover:text-white" href="#">
-                  Features
-                </a>
-              </li>
-              <li>
-                <a className="text-gray-400 hover:text-white" href="#">
-                  News &amp; Blogs
-                </a>
-              </li>
-              <li>
-                <a className="text-gray-400 hover:text-white" href="#">
-                  Help &amp; Supports
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div className="lg:w-1/3">
-            <h3 className="text-lg font-bold mb-4">Company</h3>
-            <ul className="space-y-2">
-              <li>
-                <a className="text-gray-400 hover:text-white" href="#">
-                  How we work
-                </a>
-              </li>
-              <li>
-                <a className="text-gray-400 hover:text-white" href="#">
-                  Terms of service
-                </a>
-              </li>
-              <li>
-                <a className="text-gray-400 hover:text-white" href="#">
-                  Pricing
-                </a>
-              </li>
-              <li>
-                <a className="text-gray-400 hover:text-white" href="#">
-                  FAQ
-                </a>
-              </li>
-            </ul>
-            <h3 className="text-lg font-bold mt-8 mb-4">Contact Us</h3>
-            <p className="text-gray-400">
-              Jl. A.H. Nasution no105, Cicaheum Wetan, Kec. Cibeunying Kidul
-              Bandung, Jawa Barat 40164
-            </p>
-            <p className="text-gray-400">+62 896 7016 8478</p>
-            <p className="text-gray-400">dimas.yasin358@gmail.com</p>
-            <p className="text-gray-400">www.sundalingo.com</p>
-          </div>
-        </div>
-      </footer>
+      <MainFooter />
     </div>
   );
 }

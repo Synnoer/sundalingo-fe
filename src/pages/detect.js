@@ -45,7 +45,7 @@ export default function UploadImage() {
             <div className="font-semibold text-black mb-4">
               Edit atau Tambahkan Foto
             </div>
-            <div className="p-4 shadow-2xl">
+            <div className="p-4 shadow-2xl h-80">
               <div className="">
                 <input type="file" onChange={handleImageUpload} />
                 {loading && <p>Loading...</p>}
@@ -61,9 +61,9 @@ export default function UploadImage() {
           </div>
           <div className="block">
             <div className="font-semibold text-black mb-4">
-              Terjemahkan Aksara Sunda
+              Terjemahan Aksara Sunda
             </div>
-            <div className="p-4 shadow-2xl">
+            <div className="p-4 shadow-2xl h-80">
               {predictions.length > 0 && (
                 <div>
                   <h2>Predictions</h2>

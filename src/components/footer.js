@@ -1,11 +1,18 @@
+import Link from 'next/link';
+import Image from 'next/image'; 
+import Facebook from '../../public/facebook.svg'
+import Instagram from '../../public/instagram.svg'
+import Youtube from '../../public/youtube.svg'
+import Twitter from '../../public/twitter.svg'
+
 export default function MainFooter() {
     return (
         <div className="bg-[#111538]">
-            <div className="grid grid-rows-2 gap-4 p-6">
+            <div className="py-6 px-16">
                 {/* Row 1 */}
                 <div className="grid grid-cols-6 gap-4">
                     <div className="col-span-2">
-                        <h1 className="font-['Poppins-Bold',_sans-serif] text-[62px] font-bold text-indigo-600">
+                        <h1 className="font-['Poppins-Bold',_sans-serif] text-5xl font-bold text-indigo-600">
                             Sunda
                             <span className="text-white">Lingo</span>
                         </h1>
@@ -25,7 +32,7 @@ export default function MainFooter() {
                             <li>Help & Supports</li>
                         </ul>
                     </div>
-                    <div className="col-span-2 text-[#ffffff] text-2xl font-bold">
+                    <div className="text-[#ffffff] text-2xl">
                         <h2 className="text-white text-2xl font-bold mb-2">Company</h2>
                         <ul className="text-white text-base leading-10">
                             <li>How we work</li>
@@ -34,9 +41,9 @@ export default function MainFooter() {
                             <li>FAQ</li>
                         </ul>
                     </div>
-                    <div>
+                    <div className="col-span-2 text-[#ffffff]">
                         <h2 className="text-white text-2xl font-bold mb-2">Contact Us</h2>
-                        <ul className="text-white text-base leading-10">
+                        <ul className="text-white text-base space-y-4">
                             <li>Jl. A.H. Nasution No.105, Cipadung Wetan, Kec. Cibiru, Kota Bandung, Jawa Barat 40614</li>
                             <li>+62 896 7016 9478</li>
                             <li>dimas.yans338@gmail.com</li>
@@ -44,14 +51,50 @@ export default function MainFooter() {
                         </ul>
                     </div>
                 </div>
-                {/* Row 2 */}
-                <div className="flex gap-2">
-                    <div>FB</div>
-                    <div>IG</div>
-                    <div>YT</div>
-                    <div>Tweeter</div>
-                </div>
             </div>
+                {/* Row 2 */}
+                <div className="flex gap-2 px-16 pb-6">
+                    <div>
+                        <a href="https://facebook.com" target="blank">
+                            <Image
+                            src={Facebook}
+                            width={25}
+                            height={25}
+                            alt="facebook"
+                            />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://instagram.com" target="blank">
+                            <Image
+                            src={Instagram}
+                            width={25}
+                            height={25}
+                            alt="instagram"
+                            />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="htTps://youtube.com" target="blank">
+                            <Image
+                            src={Youtube}
+                            width={25}
+                            height={25}
+                            alt="youtube"
+                            />
+                        </a>
+                    </div>
+                    <div>
+                        <a href="https://x.com" target="blank">
+                            <Image
+                            src={Twitter}
+                            width={25}
+                            height={25}
+                            alt="ttwitter"
+                            />
+                        </a>
+                    </div>
+                </div>
         </div>
     );
 }
