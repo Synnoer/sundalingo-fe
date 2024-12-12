@@ -2,11 +2,12 @@ import MainHeader from '~/components/mainheader';
 import MainFooter from '~/components/footer'
 import '~/styles/globals.css';
 import React, { useState } from 'react';
-import handleUpload from '~/handleUpload'; // Import the reusable upload function
+import handleUpload from '~/handleUpload';
 
 export default function UploadImage() {
   const [predictions, setPredictions] = useState([]);
   const [inferenceImageUrl, setInferenceImageUrl] = useState('');
+  const [words, setWords] = useState('');
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -17,9 +18,10 @@ export default function UploadImage() {
     setLoading(true);
     setError(null);
     try {
-      const { predictions, inference_img_url } = await handleUpload(file); // Destructure response
+      const { predictions, inference_img_url, words } = await handleUpload(file); // Destructure response
       setPredictions(predictions);
       setInferenceImageUrl(inference_img_url);
+      setWords(words);
     } catch (err) {
       setError('Failed to upload image.');
     } finally {
@@ -47,7 +49,7 @@ export default function UploadImage() {
             </div>
             <div className="p-4 shadow-2xl h-full">
               <div className="">
-                <input type="file" />
+                <input type="file" onChange={handleImageUpload} />
                 {loading && <p>Loading...</p>}
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 {inferenceImageUrl && (
@@ -66,6 +68,7 @@ export default function UploadImage() {
             <div className="p-4 shadow-2xl h-full text-black">
               {predictions.length > 0 && (
                 <div>
+                  <h2>{words}</h2>
                   <h2>Predictions</h2>
                   <ul>
                     {predictions.map((prediction, index) => (
