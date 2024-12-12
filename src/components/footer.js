@@ -10,8 +10,8 @@ export default function MainFooter() {
         <div className="bg-[#111538]">
             <div className="py-6 px-16">
                 {/* Row 1 */}
-                <div className="grid grid-cols-6 gap-4">
-                    <div className="col-span-2">
+                <div className="grid grid-cols-2 gap-24">
+                    <div className="">
                         <h1 className="font-['Poppins-Bold',_sans-serif] text-5xl font-bold text-indigo-600">
                             Sunda
                             <span className="text-white">Lingo</span>
@@ -23,7 +23,7 @@ export default function MainFooter() {
                             Sunda untuk memahami teks Aksara Sunda.
                         </p>
                     </div>
-                    <div>
+                    {/* <div>
                         <h2 className="text-white text-2xl font-bold mb-2">About</h2>
                         <ul className="text-white text-base leading-10">
                             <li>Menu</li>
@@ -40,10 +40,10 @@ export default function MainFooter() {
                             <li>Pricing</li>
                             <li>FAQ</li>
                         </ul>
-                    </div>
-                    <div className="col-span-2 text-[#ffffff]">
-                        <h2 className="text-white text-2xl font-bold mb-2">Contact Us</h2>
-                        <ul className="text-white text-base space-y-4">
+                    </div> */}
+                    <div className="text-white">
+                        <h2 className="text-2xl font-bold mb-2">Contact Us</h2>
+                        <ul className="text-base space-y-2">
                             <li>Jl. A.H. Nasution No.105, Cipadung Wetan, Kec. Cibiru, Kota Bandung, Jawa Barat 40614</li>
                             <li>+62 896 7016 9478</li>
                             <li>dimas.yans338@gmail.com</li>

@@ -36,7 +36,7 @@ export default function UploadImage() {
           <span className="text-black text-5xl"> Di Sini</span>
         </div>
         <div className="flex justify-center mt-16">
-          <button className="rounded-md px-5 py-1 bg-indigo-600">
+          <button onClick={handleImageUpload} className="rounded-md px-5 py-1 bg-indigo-600">
             Terjemahkan
           </button>
         </div>
@@ -45,15 +45,15 @@ export default function UploadImage() {
             <div className="font-semibold text-black mb-4">
               Edit atau Tambahkan Foto
             </div>
-            <div className="p-4 shadow-2xl h-80">
+            <div className="p-4 shadow-2xl h-full">
               <div className="">
-                <input type="file" onChange={handleImageUpload} />
+                <input type="file" />
                 {loading && <p>Loading...</p>}
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 {inferenceImageUrl && (
                   <div>
                     <h2>Processed Image</h2>
-                    <img src={inferenceImageUrl} alt="Processed Output" style={{ maxWidth: '100%' }} />
+                    <img src={inferenceImageUrl} alt="Processed Output" className="object-cover" style={{ maxWidth: '100%' }} />
                   </div>
                 )}
               </div>
@@ -63,7 +63,7 @@ export default function UploadImage() {
             <div className="font-semibold text-black mb-4">
               Terjemahan Aksara Sunda
             </div>
-            <div className="p-4 shadow-2xl h-80">
+            <div className="p-4 shadow-2xl h-full">
               {predictions.length > 0 && (
                 <div>
                   <h2>Predictions</h2>
