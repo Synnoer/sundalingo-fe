@@ -6,7 +6,7 @@ export default function MainHeader() {
                     Sunda<span className="text-black">Lingo</span>
                 </div>
                 <nav className="flex-1 flex justify-center space-x-6 ml-[-15%]">
-                    <a className="text-black hover:text-indigo- font-bold" href="#">
+                    <a className="text-black hover:text-indigo- font-bold" href="/">
                         Home
                     </a>
                     <a className="text-gray-600 hover:text-indigo- font-bold" href="#">

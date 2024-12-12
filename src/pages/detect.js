@@ -51,7 +51,7 @@ export default function UploadImage() {
                 {loading && <p>Loading...</p>}
                 {error && <p style={{ color: 'red' }}>{error}</p>}
                 {inferenceImageUrl && (
-                  <div>
+                  <div className="text-black">
                     <h2>Processed Image</h2>
                     <img src={inferenceImageUrl} alt="Processed Output" className="object-cover" style={{ maxWidth: '100%' }} />
                   </div>
@@ -63,7 +63,7 @@ export default function UploadImage() {
             <div className="font-semibold text-black mb-4">
               Terjemahan Aksara Sunda
             </div>
-            <div className="p-4 shadow-2xl h-full">
+            <div className="p-4 shadow-2xl h-full text-black">
               {predictions.length > 0 && (
                 <div>
                   <h2>Predictions</h2>

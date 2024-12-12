@@ -55,17 +55,17 @@ export default function Home() {
         <section className="bg-indigo-600 text-white py-12">
           <div className="container mx-auto px-4 flex justify-around">
             <div className="text-center">
-              <div className="text-3xl font-bold">30+</div>
-              <div className="text-lg">Total Aksara</div>
+              <div className="text-3xl font-bold">Model</div>
+              <div className="text-lg">YOLOV5</div>
             </div>
             <div className="text-center">
-              <div className="text-3xl font-bold">100+</div>
-              <div className="text-lg">Total Pengguna</div>
+              <div className="text-3xl font-bold">5056</div>
+              <div className="text-lg">Image Dataset</div>
             </div>
-            <div className="text-center">
+            {/* <div className="text-center">
               <div className="text-3xl font-bold">250+</div>
               <div className="text-lg">Total Kosakata</div>
-            </div>
+            </div> */}
           </div>
         </section>
         {/* <section className="bg-gray-100 py-12">
