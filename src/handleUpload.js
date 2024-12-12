@@ -13,6 +13,7 @@ const handleUpload = async (file) => {
     return {
       predictions: response.data.predictions,
       inference_img_url: response.data.inference_img_url,
+      words: response.data.words,
     };
   } catch (error) {
     console.error('Error uploading image:', error);
